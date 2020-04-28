@@ -5,29 +5,55 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 class Contributors {
-    @SerializedName("Host")
+    @SerializedName("login")
     @Expose
-    private var Host: String? = null
-
-    @SerializedName("Referer")
+    private var login: String? = null
+    @SerializedName("id")
     @Expose
-    private var Referer: String? = null
+    private var id: Int? = null
+    @SerializedName("node_id")
+    @Expose
+    private var nodeId: String? = null
+    @SerializedName("type")
+    @Expose
+    private var type: String? = null
 
 
-    fun getHost(): String? {
-       return Host
+    fun getLogin(): String? {
+        return login
     }
 
-    fun setHost(login: String) {
-        this.Host = Host
+    fun setLogin(login: String) {
+        this.login = login
     }
 
-    fun getReferer(): String? {
-        return Referer
+    fun getId(): Int? {
+        return id
     }
 
-    fun setReferer(login: String) {
-        this.Referer = Referer
+
+    fun setId(id: Int?) {
+        this.id = id
     }
+
+
+    fun getNodeId(): String? {
+        return nodeId
+    }
+
+
+    fun setNodeId(nodeId: String) {
+        this.nodeId = nodeId
+    }
+
+    fun getType(): String? {
+        return type
+    }
+
+
+    fun setType(type: String) {
+        this.type = type
+    }
+
 
 }

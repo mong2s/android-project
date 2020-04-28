@@ -17,7 +17,7 @@ object OKHttpRetrofit {
     val CONNECT_TIMEOUT: Long = 15
     val WRITE_TIMEOUT: Long = 15
     val READ_TIMEOUT: Long = 15
-    val API_URL: String = "https://resttesttest.com/"
+    val API_URL: String = "https://api.github.com/"
 
     var mOKHttpClient: OkHttpClient
     var mRetrofit: Retrofit

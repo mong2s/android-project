@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        const val PAGE_URL = "https://resttesttest.com/"
+        const val PAGE_URL = "https://github.com/mong2s/"
         const val MAX_PROGRESS = 100
 
         fun newIntent(context: Context, pageUrl: String): Intent {
