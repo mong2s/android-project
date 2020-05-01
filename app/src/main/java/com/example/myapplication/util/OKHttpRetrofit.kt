@@ -21,7 +21,7 @@ object OKHttpRetrofit {
 
     var mOKHttpClient: OkHttpClient
     var mRetrofit: Retrofit
-    var mKotlinRetrofitInterface: RetrofitInterface
+    var RetrofitInterface: RetrofitInterface
 
     init {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
@@ -42,12 +42,12 @@ object OKHttpRetrofit {
         }.build()
 
 
-        mKotlinRetrofitInterface = mRetrofit.create()
+        RetrofitInterface = mRetrofit.create()
     }
 
 
     fun getInstance():RetrofitInterface {
-        return mKotlinRetrofitInterface
+        return RetrofitInterface
     }
 
 

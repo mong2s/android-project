@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp">
+
+
+    <ImageView
+        android:id="@+id/GitDataTestImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/GitDataTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/GitDataTestImage"
+        app:layout_constraintStart_toStartOf="@+id/GitDataTestImage"
+        android:text="Title"/>
+
+    <TextView
+        android:id="@+id/GitDataValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="@+id/GitDataTestImage"
+        app:layout_constraintStart_toStartOf="@+id/GitDataTestImage"
+        android:text="value"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
     private fun initUI() {
         NextButton.setOnClickListener{
             val nextActivityIntnent = Intent(this, RestfulSampleActivity::class.java)
-            nextActivityIntnent.putExtra("nextTestString","mong2s")
-            nextActivityIntnent.putExtra("nextTestInt",123456780)
+            nextActivityIntnent.putExtra("nextTestString","next first activity -> sec activity")
+            nextActivityIntnent.putExtra("nextTestInt",2)
             startActivity(nextActivityIntnent)
         }
     }
