@@ -1,27 +1,22 @@
 package com.example.myapplication.util
 
-import io.reactivex.Single
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
-import java.io.IOException
 import java.util.concurrent.TimeUnit
 
-object OKHttpRetrofit {
-
+object weatherOKHttpRestofit {
     val CONNECT_TIMEOUT: Long = 15
     val WRITE_TIMEOUT: Long = 15
     val READ_TIMEOUT: Long = 15
-    val API_URL: String = "https://api.github.com/"
+    val API_URL: String = "https://api.openweathermap.org/"
 
     var mOKHttpClient: OkHttpClient
     var mRetrofit: Retrofit
-    var RetrofitInterface: RetrofitInterface
+    var RetrofitInterface: weatherRetrofitInterface
 
     init {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
@@ -45,11 +40,7 @@ object OKHttpRetrofit {
         RetrofitInterface = mRetrofit.create()
     }
 
-
-    fun getInstance():RetrofitInterface {
+    fun getInstance():weatherRetrofitInterface {
         return RetrofitInterface
     }
-
-
-
 }

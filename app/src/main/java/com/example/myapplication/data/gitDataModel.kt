@@ -1,10 +1,9 @@
-package com.example.myapplication.util
+package com.example.myapplication.data
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
-class Contributors {
+class gitDataModel {
     @SerializedName("login")
     @Expose
     private var login: String? = null

@@ -8,8 +8,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.data.GitData
-import com.example.myapplication.util.Contributors
-import com.example.myapplication.util.OKHttpRetrofit
+import com.example.myapplication.data.gitDataModel
+import com.example.myapplication.util.gitDataOKHttpRetrofit
 import com.example.myapplication.view.ReCycleAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -17,28 +17,23 @@ import kotlinx.android.synthetic.main.activity_restful_sample.*
 
 class RestfulSampleActivity : AppCompatActivity() {
 
-    val TAG: String = "mong2s"
+    val TAG: String = "mong RestfulSampleActivity"
 
-    @SuppressLint("CheckResult")
+    @SuppressLint("CheckResult", "LongLogTag")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restful_sample)
 
         initUI()
 
-        // RxJava get data api.github.com/user/username
-        val adapter = OKHttpRetrofit.getInstance()
+        // RxJava get data https://api.github.com/user/{username}
+        val adapter = gitDataOKHttpRetrofit.getInstance()
         adapter.requestContributors("mong2s", "android-project")
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .doOnError {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
                 Log.d(TAG, "Error")
-            }
-            .unsubscribeOn(Schedulers.io())
-            .onErrorReturn { t: Throwable ->
-                Log.d(TAG, "ErrorReturn : " + t.message)
-                arrayOf(Contributors())
             }
             .subscribe { result ->
                 if ("User" == result[0].getType()) {
@@ -83,7 +78,7 @@ class RestfulSampleActivity : AppCompatActivity() {
         }
 
         sample2_NextButton.setOnClickListener{
-            val nextActivityIntnent = Intent(this, MainActivity::class.java)
+            val nextActivityIntnent = Intent(this, WeatherSampleActivity::class.java)
             nextActivityIntnent.putExtra("nextTestString","next sec activity -> third activity")
             nextActivityIntnent.putExtra("nextTestInt",3)
             startActivity(nextActivityIntnent)
